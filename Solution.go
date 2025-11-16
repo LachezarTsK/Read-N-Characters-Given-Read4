@@ -31,7 +31,7 @@ var solution = func(read4 func([]byte) int) func([]byte, int) int {
         var numberOfReadChars = read4(buffer)
         updateDestinationBuffer(destinationBuffer, numberOfReadChars)
 
-        for numberOfReadChars == 4 && numberOfRemainingOfCharsToRead > 0 {
+        for numberOfReadChars == MAX_READ_CHARS_PER_CALL_OF_READ4 && numberOfRemainingOfCharsToRead > 0 {
             numberOfReadChars = read4(buffer)
             updateDestinationBuffer(destinationBuffer, numberOfReadChars)
         }
