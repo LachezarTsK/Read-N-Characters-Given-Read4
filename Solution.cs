@@ -23,7 +23,7 @@ public class Solution : Reader4
         int numberOfReadChars = Read4(buffer);
         UpdateDestinationBuffer(destinationBuffer, numberOfReadChars);
 
-        while (numberOfReadChars == 4 && numberOfRemainingOfCharsToRead > 0)
+        while (numberOfReadChars == MAX_READ_CHARS_PER_CALL_OF_READ4 && numberOfRemainingOfCharsToRead > 0)
         {
             numberOfReadChars = Read4(buffer);
             UpdateDestinationBuffer(destinationBuffer, numberOfReadChars);
