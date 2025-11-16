@@ -19,7 +19,7 @@ public class Solution extends Reader4 {
         int numberOfReadChars = super.read4(buffer);
         updateDestinationBuffer(destinationBuffer, numberOfReadChars);
 
-        while (numberOfReadChars == 4 && numberOfRemainingOfCharsToRead > 0) {
+        while (numberOfReadChars == MAX_READ_CHARS_PER_CALL_OF_READ4 && numberOfRemainingOfCharsToRead > 0) {
             numberOfReadChars = super.read4(buffer);
             updateDestinationBuffer(destinationBuffer, numberOfReadChars);
         }
